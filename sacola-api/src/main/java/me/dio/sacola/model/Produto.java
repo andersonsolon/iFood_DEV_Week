@@ -1,4 +1,4 @@
-package me.dio.sacolaApi.model;
+package me.dio.sacola.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -6,11 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import me.dio.sacolaApi.enumeration.FormaPagamento;
 
 import javax.persistence.*;
-import java.util.List;
-
 
 @AllArgsConstructor
 @Builder
@@ -18,17 +15,15 @@ import java.util.List;
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 @NoArgsConstructor
-public class Sacola {
+public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    private String nome;
+    private double valorUnitario;
+    @Builder.Default
+    private Boolean disponivel = true;
+    @ManyToOne
     @JsonIgnore
-    private Cliente cliente;
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Item> itens;
-    private Double valorTotal;
-    @Enumerated
-    private FormaPagamento FormaPagamento;
-    private boolean fechada;
-}
+    private Restaurante restaurante;
+    }

@@ -1,4 +1,4 @@
-package me.dio.sacolaApi.model;
+package me.dio.sacola.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;

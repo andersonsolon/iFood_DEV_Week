@@ -1,6 +1,6 @@
-package me.dio.sacolaApi.repository;
+package me.dio.sacola.repository;
 
-import me.dio.sacolaApi.model.Produto;
+import me.dio.sacola.model.Produto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package me.dio.sacolaApi.enumeration;
+package me.dio.sacola.enumeration;
 
 public enum FormaPagamento {
     DINHEIRO, MAQUINETA;
